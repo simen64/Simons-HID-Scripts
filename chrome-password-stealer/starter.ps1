@@ -1,7 +1,3 @@
-param (
-  [string]$webhookUrl
-)
-
 $filePath = "$env:LocalAppData\Programs\Python\Python311\python.exe"
 
 py -m pip install pycryptodomex pywin32
