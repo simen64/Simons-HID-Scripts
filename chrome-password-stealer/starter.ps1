@@ -39,6 +39,7 @@ $headers = @{
     "Content-Type" = "multipart/form-data; boundary=$boundary"
 }
 
+Write-Host "Sending data to $dc"
 Invoke-RestMethod -Uri $dc -Method Post -Headers $headers -Body $body
 
 pause
