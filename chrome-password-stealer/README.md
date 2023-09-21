@@ -9,6 +9,24 @@ This payload downloads and executes a powershell script that downloads a python 
 - Windows
 - Python
 
+# How to use
+
+## Pico-Ducky
+
+If you have a [pico-ducky](https://github.com/dbisu/pico-ducky) which is what this payload was originally built for you just download the keylog-starter-pico.dd and place it in the root of your pico directory. If you have a pico-ducky without wifi you need to rename it to ``payload.dd`` ``payload2.dd`` ``payload3.dd`` or ``payload4.dd`` read more here [here](https://github.com/dbisu/pico-ducky).
+
+## Evilcrow cable-pro
+
+Copy the contents of the ``keylog-starter-evilcrow.h`` to your ``payload.h`` file on your [EvilCrow Cable-pro](https://github.com/joelsernamoreno/EvilCrowCable-Pro/tree/main)
+
+## P4wnP1 A.L.O.A
+
+I am working on a version for HID script
+
+## Any other ducky script compatible tools
+
+I havent tested any others but if you do please open up an issue and tell me how it went
+
 # How it Works:
 
 (This code is very unoptimized, but i havent bothered fixing it)
