@@ -13,11 +13,11 @@ This payload downloads and executes a powershell script that downloads a python 
 
 ## Pico-Ducky
 
-If you have a [pico-ducky](https://github.com/dbisu/pico-ducky) which is what this payload was originally built for you just download the keylog-starter-pico.dd and place it in the root of your pico directory. If you have a pico-ducky without wifi you need to rename it to ``payload.dd`` ``payload2.dd`` ``payload3.dd`` or ``payload4.dd`` read more here [here](https://github.com/dbisu/pico-ducky).
+If you have a [pico-ducky](https://github.com/dbisu/pico-ducky) which is what this payload was originally built for you just download the ``password-stealer-pico.dd`` and place it in the root of your pico directory. If you have a pico-ducky without wifi you need to rename it to ``payload.dd`` ``payload2.dd`` ``payload3.dd`` or ``payload4.dd`` read more here [here](https://github.com/dbisu/pico-ducky).
 
 ## Evilcrow cable-pro
 
-Copy the contents of the ``keylog-starter-evilcrow.h`` to your ``payload.h`` file on your [EvilCrow Cable-pro](https://github.com/joelsernamoreno/EvilCrowCable-Pro/tree/main)
+Copy the contents of the ``password-stealer.h`` to your ``payload.h`` file on your [EvilCrow Cable-pro](https://github.com/joelsernamoreno/EvilCrowCable-Pro/tree/main)
 
 ## P4wnP1 A.L.O.A
 
