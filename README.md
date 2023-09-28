@@ -1,4 +1,4 @@
 # Pico-HID-Scripts
-These are some of the rubber ducky scripts i have worked, these are only tested on the pico ducky projected by dbisu, but feel free to test them on any other HID injection platforms.
+These are some of the rubber ducky scripts i have made. I mainly make them for the dbisu pico ducky and the evilcrow pro cable.
 
 These are only for educational purposes.
