@@ -17,7 +17,7 @@ If you have a [pico-ducky](https://github.com/dbisu/pico-ducky) which is what th
 
 ## Evilcrow cable-pro
 
-Copy the contents of the ``password-stealer.h`` to your ``payload.h`` file on your [EvilCrow Cable-pro](https://github.com/joelsernamoreno/EvilCrowCable-Pro/tree/main)
+Copy the contents of the ``password-stealer-evilcrow.h`` to your ``payload.h`` file on your [EvilCrow Cable-pro](https://github.com/joelsernamoreno/EvilCrowCable-Pro/tree/main)
 
 ## P4wnP1 A.L.O.A
 
