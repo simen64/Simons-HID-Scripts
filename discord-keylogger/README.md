@@ -44,8 +44,7 @@ And last but not least it downloads the ekylog-activator.ps1 script and executes
 (copied from the [chrome password stealer](https://github.com/simen64/Pico-HID-Scripts/tree/main/chrome-password-stealerw) README thats made by me)
 
 ## The activator script
-
-I used to have the bad usb enter all of these commands that sets the keylogger up, but i realised i can just paste it into a powershell script and shorten down the time that the usb needs to be plugged in drasticly. This is why the powershell script isnt really structured in a normal way, and i am to lazy to actually structure it because powershell scripting sucks. But if anyone wants to do it create a pull request.
+The script is used to configure the actual logger.
 
 ### Commands ran by the ps script:
 
