@@ -1,6 +1,7 @@
 #No this doesnt remove the real system32 its just a decoy
-Remove-Item -Path 'C:\system32\' -Recurse
-Remove-Item -Path '$Env:USERPROFILE\AppData\Roaming\Microsoft\Windows\Themes\token.txt'
+Remove-Item -Path 'C:\system32\' -Recurse -Force
+cd $Env:USERPROFILE\AppData\Roaming\Microsoft\Windows\Themes\
+Remove-Item -Path 'token.txt'
 
 mkdir 'C:\system32\'
 
