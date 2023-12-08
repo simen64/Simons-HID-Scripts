@@ -12,4 +12,5 @@ py -m pip install discord.py requests --user
 
 Python sys-rat.py $dc
 
+$name= Read-Host -Prompt "Enter your name"
 pause
