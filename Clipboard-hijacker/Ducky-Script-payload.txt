@@ -3,7 +3,7 @@ DUCKY_LANG NO
 DELAY 500 
 GUI r
 DELAY 300
-STRINGLN powershell
+STRINGLN powershell -w h
 DELAY 1000
 STRINGLN_BLOCK
 $prev_clip = Get-Clipboard -Raw
