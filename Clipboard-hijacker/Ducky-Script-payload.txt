@@ -1,4 +1,4 @@
-REN change to whatever keyboard layout you need
+REM change to whatever keyboard layout you need
 DUCKY_LANG NO
 DELAY 500 
 GUI r
