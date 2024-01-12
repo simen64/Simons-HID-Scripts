@@ -1,5 +1,6 @@
 # Simons-HID-Scripts
-These are some of the rubber ducky scripts i have made. I mainly make them for the dbisu pico ducky and the evilcrow pro cable.
+These are some of the ducky scripts i have made.
 
 These are only for educational purposes.
 I am not liable for any damages done with these scripts.
+Please follow laws, and only use these on machines you have authorized access to attack.
