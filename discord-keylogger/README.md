@@ -9,7 +9,6 @@ This payload executes a powershell command that downloads a python keylogger and
 
 - Windows
 - Python
-- User is admin
 
 # How to use:
 
@@ -25,11 +24,17 @@ Copy the contents of the ``keylog-starter-evilcrow.h`` to your ``payload.h`` fil
 
 I am working on a version for HID script
 
+## O.MG Devices
+
+Paste the contents of `keyload-starter-omg.txt` to one of your payload slots
+
 ## Any other ducky script compatible tools
 
 I havent tested any others but if you do please open up an issue and tell me how it went
 
 # How it Works:
+
+(Slight modifications has been made but most still stands)
 
 ## The rubber ducky script
 When the grabber.dd runs it opens a run dialoge with admin privileges and enters this script.
