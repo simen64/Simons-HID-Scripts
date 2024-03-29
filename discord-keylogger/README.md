@@ -26,7 +26,7 @@ I am working on a version for HID script
 
 ## O.MG Devices
 
-Paste the contents of `keyload-starter-omg.txt` to one of your payload slots
+Paste the contents of `keylog-starter-omg.txt` to one of your payload slots
 
 ## Any other ducky script compatible tools
 
