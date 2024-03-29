@@ -8,7 +8,8 @@ Now what the powershell script does, it gets the users clipboard contents and se
 
 ## How to use
 
-The payload was made for the O.MG plug which means it uses a slightly modified version of Ducky Script 2. This should technically make it compatible with most other Ducky Script enabled devices just with some sligt modifications.
+The payload was made for the O.MG plug which means it uses a slightly modified version of Ducky Script 2. This should technically make it compatible with most other Ducky Script enabled devices just with some sligt modifications.  
+Do note that payload is not done when you recieve a discord notification saying `Connection made` but rather when the caps-lock turns on.
 
 If you dont want to use a BadUsb to deliver the payload you can just download the .ps1 script.
 
