@@ -13,3 +13,7 @@ The payload was made for the O.MG plug which means it uses a slightly modified v
 If you dont want to use a BadUsb to deliver the payload you can just download the .ps1 script.
 
 For both, remember to place your discord webhook in the `$dc` variable
+
+## Why so long payload
+
+When i made this payload i wanted to experiment with living off the land in powershell and type out the whole program, and it isnt so long so it works ok. I have later realised i could have made it much shorter, but i dont plan on updating it but if you want your welcome to!
