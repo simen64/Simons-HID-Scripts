@@ -18,7 +18,7 @@ Please follow laws, and only use these on machines you have authorized access to
 # Compatibility Table
 
 ```
-✅ = Payload has a version for this device
+✅ = Payload works on this device with no modifications
 🚧 = No specific payload for this device, but can be pretty easily modified to work
 ❌ = Payload does not support this device
 ```
